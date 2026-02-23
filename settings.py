@@ -15,12 +15,12 @@ MIDDLEWARE = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://edukatorproj.vercel.app",
+    "https://edukatorproj-pzxuqzfx6-saca12s-projects.vercel.app",
     "https://*.railway.app" # Optionnel mais recommandé
 ]
 # Remplacez par l'URL réelle de votre projet Vercel
 CORS_ALLOWED_ORIGINS = [
-    "https://edukatorproj.vercel.app",
+    "https://edukatorproj-pzxuqzfx6-saca12s-projects.vercel.app",
 ]
 
 # Si vous voulez tester rapidement sans restriction (moins sécurisé)
