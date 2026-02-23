@@ -7,7 +7,11 @@ ALLOWED_HOSTS = ['*'] # À affiner plus tard avec ton URL Render
 
 # Base de données (Utilise la variable d'env DATABASE_URL de Render)
 DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600)
+    'default': dj_database_url.config(
+        # Cette ligne récupère la variable DATABASE_URL de Render
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600
+    )
 }
 
 # Fichiers statiques (indispensable pour WhiteNoise)
