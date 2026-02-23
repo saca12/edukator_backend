@@ -1,10 +1,17 @@
-from Projet_web_avance.TuteurIA.settings import BASE_DIR
-import dj_database_url
 import os
+import dj_database_url
+from pathlib import Path
 from dotenv import load_dotenv
-load_dotenv(os.path.join(BASE_DIR, '.env'))
 
+# Définit BASE_DIR proprement
+BASE_DIR = Path(__file__).resolve().parent
 
+# Charge le .env SEULEMENT s'il existe (donc en local)
+env_path = os.path.join(BASE_DIR, '.env')
+if os.path.exists(env_path):
+    load_dotenv(env_path)
+
+# ... reste de ton code DATABASES ...
 # Sécurité
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = ['*'] # À affiner plus tard avec ton URL Render
